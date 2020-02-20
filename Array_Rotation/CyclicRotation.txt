@@ -1,0 +1,17 @@
+def CyclicRotation(givenList,d):
+    for i in range(0,d):
+        lastEle = givenList[len(givenList)-1]
+        
+        for j in range(len(givenList)-1,0):
+            givenList[j-1] = givenList[j]
+            
+        givenList[(len(givenList)-1)] = lastEle
+        
+    return givenList
+
+if __name__ == '__main__':
+    givenList = [1,2,3,4,5]
+    d = 2
+    newList = CyclicRotation(givenList,d)
+    
+    print(newList)
