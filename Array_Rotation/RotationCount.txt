@@ -1,0 +1,24 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Feb 21 17:41:01 2020
+
+@author: avishake.dutta
+"""
+
+def rotationCount(givenList):
+    min = givenList[0]
+    n = len(givenList)
+    for i in range(n):
+        if min>givenList[i]:
+            min = givenList[i]
+            minIndex = i
+    
+    return minIndex
+
+if __name__ == '__main__':
+    givenList = [15, 18, 2, 3, 6, 12]
+    
+    index = rotationCount(givenList)
+    
+    print(index)
+            
