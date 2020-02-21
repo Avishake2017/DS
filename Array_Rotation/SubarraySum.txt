@@ -1,0 +1,32 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Feb 21 11:29:07 2020
+
+@author: avishake.dutta
+"""
+
+def returnSubArray(givenList,requiredSum):
+    n = len(givenList)
+    for i in range(n):
+        currentSum = givenList[i]
+        
+        j = i+1
+        
+        while j <= n:
+            if currentSum == requiredSum:
+                print("SubArray found at",i,j-1)
+                return 1
+            
+            if currentSum>requiredSum or j == n:
+                break
+            
+            currentSum += givenList[j]
+            j += 1
+    
+    print("No such subarray found")
+    return 0
+    
+if __name__ == '__main__':
+    givenList = [1,2,3,4,5]
+    requiredSum = 9
+    returnSubArray(givenList,requiredSum)
